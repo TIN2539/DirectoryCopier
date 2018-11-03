@@ -9,7 +9,7 @@ namespace DirectoryCopier.Domain
     public interface ICopyManager
     {
         int CountOfAllFiles(string path);
-        void CopyFileAsync(string sourcePath, string targetPath);
+        void CopyFileAsync(ICollection<string> sourcePath, string targetPath);
         IEnumerable<string> GetAllFiles(string path);
     }
 }

@@ -10,7 +10,7 @@ namespace DirectoryCopier.Domain
 {
     public class CopyManager : ICopyManager
     {
-        public void CopyFileAsync(string sourcePath, string targetPath)
+        public void CopyFileAsync(ICollection<string> sourcePath, string targetPath)
         {
             for (int i = 0; i < 3; i++)
             {
@@ -18,9 +18,12 @@ namespace DirectoryCopier.Domain
             }
         }
 
-        private void CopyFile(string sourcePath, string targetPath)
+        private void CopyFile(ICollection<string> sourcePath, string targetPath)
         {
-            throw new NotImplementedException();
+            var file = sourcePath.First();
+            sourcePath.Remove(file);
+            FileStream reader = new FileStream(file, FileMode.Open, FileAccess.Read);
+
         }
 
         public int CountOfAllFiles(string path)

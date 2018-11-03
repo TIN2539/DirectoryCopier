@@ -16,7 +16,7 @@ namespace DirectoryCopier.Presentation.Wpf.ViewModels
 {
     public sealed class MainViewModel : ViewModel
     {
-        private IEnumerable<string> files = new List<string>();
+        private List<string> files = new List<string>();
         private readonly ICommand browseFromCommand;
         private readonly ICommand browseToCommand;
         private readonly ICommand copyFilesCommand;
@@ -38,6 +38,7 @@ namespace DirectoryCopier.Presentation.Wpf.ViewModels
         {
             CountAllFiles = copyManager.CountOfAllFiles(fromValue);
             CountCopiedFiles = 0;
+            copyManager.CopyFileAsync(files, toValue);
         }
 
         private void BrowseTo()
@@ -63,7 +64,7 @@ namespace DirectoryCopier.Presentation.Wpf.ViewModels
             if(result == CommonFileDialogResult.Ok)
             {
                 FromValue = dialog.FileName;
-                files = copyManager.GetAllFiles(fromValue);
+                files.AddRange(copyManager.GetAllFiles(fromValue));
             }
         }
 
