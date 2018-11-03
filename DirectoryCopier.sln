@@ -3,9 +3,44 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{C2620B87-F1C5-4BCD-B1ED-678C18AC4234}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{71731A59-6E96-499C-A3DD-F509D660095D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{57597E59-3543-4C1D-B3E3-3C1362661B1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectoryCopier.Presentation.Wpf", "DirectoryCopier.Presentation.Wpf\DirectoryCopier.Presentation.Wpf.csproj", "{DB3D44AD-6E9B-4BC5-968B-9261A0A2BA86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileSearch.Utilities.Wpf", "..\FileSearch\FileSearch.Utilities.Wpf\FileSearch.Utilities.Wpf.csproj", "{F5E79BE6-64EC-4C8A-98F2-175AF76A3277}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectoryCopier.Domain", "DirectoryCopier.Domain\DirectoryCopier.Domain.csproj", "{B3EBF701-0918-41AA-B46F-5307ECE90CE7}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB3D44AD-6E9B-4BC5-968B-9261A0A2BA86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB3D44AD-6E9B-4BC5-968B-9261A0A2BA86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB3D44AD-6E9B-4BC5-968B-9261A0A2BA86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB3D44AD-6E9B-4BC5-968B-9261A0A2BA86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5E79BE6-64EC-4C8A-98F2-175AF76A3277}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5E79BE6-64EC-4C8A-98F2-175AF76A3277}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5E79BE6-64EC-4C8A-98F2-175AF76A3277}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5E79BE6-64EC-4C8A-98F2-175AF76A3277}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3EBF701-0918-41AA-B46F-5307ECE90CE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3EBF701-0918-41AA-B46F-5307ECE90CE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3EBF701-0918-41AA-B46F-5307ECE90CE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3EBF701-0918-41AA-B46F-5307ECE90CE7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DB3D44AD-6E9B-4BC5-968B-9261A0A2BA86} = {71731A59-6E96-499C-A3DD-F509D660095D}
+		{F5E79BE6-64EC-4C8A-98F2-175AF76A3277} = {57597E59-3543-4C1D-B3E3-3C1362661B1D}
+		{B3EBF701-0918-41AA-B46F-5307ECE90CE7} = {C2620B87-F1C5-4BCD-B1ED-678C18AC4234}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ECDF9EAD-ECE3-4B65-8BDE-4E0A44ACE863}

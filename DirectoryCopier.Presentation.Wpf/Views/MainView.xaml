@@ -1,0 +1,53 @@
+﻿<Window x:Class="DirectoryCopier.Presentation.Wpf.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Directory Copier" 
+        Height="300" 
+        Width="600">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Column="0" Grid.Row="0">From:</TextBlock>
+            <TextBox Grid.Column="1" Margin="5, 0" Grid.Row="0" Text="{Binding FromValue}" IsReadOnly="True"></TextBox>
+            <Button Grid.Column="2" Grid.Row="0" Command="{Binding BrowseFromCommand}">Browse...</Button>
+            <TextBlock Grid.Column="0" Grid.Row="1" Margin="0, 5">To:</TextBlock>
+            <TextBox Grid.Column="1" Margin="5" Grid.Row="1" Text="{Binding ToValue}" IsReadOnly="True"></TextBox>
+            <Button Grid.Column="2" Grid.Row="1" Margin="0, 5" Command="{Binding BrowseToCommand}">Browse...</Button>
+            <Button Grid.Column="2" Grid.Row="2" Margin="0, 5" Command="{Binding CopyFilesCommand}">Copy Files</Button>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" HorizontalAlignment="Right" Text="Files Copied: "></TextBlock>
+            <StackPanel Grid.Column="1" Orientation="Horizontal">
+                <TextBlock Text="{Binding CountCopiedFiles}"></TextBlock>
+                <TextBlock Text=" / "/>
+                <TextBlock Text="{Binding CountAllFiles}"></TextBlock>
+            </StackPanel>
+        </Grid>
+        <StackPanel Grid.Row="2" Orientation="Vertical">
+            <TextBlock Margin="0, 5, 0, 0">File:</TextBlock>
+            <ProgressBar Height="30"></ProgressBar>
+            <TextBlock Margin="0, 5, 0, 0">File:</TextBlock>
+            <ProgressBar Height="30"></ProgressBar>
+            <TextBlock Margin="0, 5, 0, 0">File:</TextBlock>
+            <ProgressBar Height="30"></ProgressBar>
+        </StackPanel>
+    </Grid>
+</Window>
